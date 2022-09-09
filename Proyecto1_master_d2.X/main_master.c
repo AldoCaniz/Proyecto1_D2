@@ -1,6 +1,6 @@
 /*
  * File:   main_master.c
- * Author: Josea
+ * Author: Jose y Aldo
  *
  * Created on 9 de septiembre de 2022, 08:53 AM
  */

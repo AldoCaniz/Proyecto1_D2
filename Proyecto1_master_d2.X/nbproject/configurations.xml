@@ -15,7 +15,6 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>main_master.c</itemPath>
       <itemPath>oscilador.c</itemPath>
       <itemPath>SPI.c</itemPath>
       <itemPath>LCD.c</itemPath>

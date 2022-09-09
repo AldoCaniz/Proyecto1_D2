@@ -11,7 +11,35 @@
 #include "SPI.h"
 #include <xc.h>
 
+uint8_t mensaje = 1;
+
+void setup(void);
+
+void __interrupt() isr(void){
+    if (PIR1bits.RCIF){
+        mensaje = RCREG;
+    }
+}
+
 void main(void) {
-    
+    while(1){
+        if (PIR1bits.TXIF){             // Esperamos a que este libre el ?
+            TXREG = mensaje;    // Cargamos caracter a enviar
+        }
+    }
     return;
+}
+
+void setup(void){
+    TXSTAbits.SYNC = 0;         // Comunicaci n ascincrona (full-duplex)
+    TXSTAbits.BRGH = 1;         // Baud rate de alta velocidad 
+    BAUDCTLbits.BRG16 = 1;      // 16-bits para generar el baud rate
+    
+    SPBRG = 25;
+    SPBRGH = 0;                 // Baud rate ~9600, error -> 0.16%
+    
+    RCSTAbits.SPEN = 1;         // Habilitamos comunicación
+    TXSTAbits.TX9 = 0;          // Utilizamos solo 8 bits
+    TXSTAbits.TXEN = 1;         // Habilitamos transmisor
+    RCSTAbits.CREN = 1;         // Habilitamos receptor
 }

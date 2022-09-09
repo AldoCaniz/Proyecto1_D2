@@ -1,6 +1,6 @@
 /*
  * File:   main_master.c
- * Author:  Aldo y jose najera
+ * Author:  Aldo Caniz y Jose Najera
  *
  * Created on 9 de septiembre de 2022, 08:53 AM
  */

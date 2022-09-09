@@ -33,7 +33,7 @@
 "246
 [u S51 . 1 `S42 1 . 1 0 ]
 [v _PORTBbits PORTBbits `VES51  1 e 1 @6 ]
-[s S247 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S167 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -43,13 +43,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "483
-[s S256 . 1 `uc 1 . 1 0 :2:0 
+[s S176 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
-[u S261 . 1 `S247 1 . 1 0 `S256 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES261  1 e 1 @11 ]
+[u S181 . 1 `S167 1 . 1 0 `S176 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES181  1 e 1 @11 ]
 [s S22 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -89,7 +89,7 @@
 [v _RCSTAbits RCSTAbits `VES142  1 e 1 @24 ]
 "1141
 [v _RCREG RCREG `VEuc  1 e 1 @26 ]
-[s S220 . 1 `uc 1 PS 1 0 :3:0 
+[s S286 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -97,13 +97,13 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1367
-[s S227 . 1 `uc 1 PS0 1 0 :1:0 
+[s S293 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S231 . 1 `S220 1 . 1 0 `S227 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES231  1 e 1 @129 ]
-[s S335 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S297 . 1 `S286 1 . 1 0 `S293 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES297  1 e 1 @129 ]
+[s S379 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -113,25 +113,36 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1558
-[u S344 . 1 `S335 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES344  1 e 1 @135 ]
-[s S297 . 1 `uc 1 SCS 1 0 :1:0 
+[u S388 . 1 `S379 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES388  1 e 1 @135 ]
+[s S199 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"1719
+[u S207 . 1 `S199 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES207  1 e 1 @140 ]
+[s S341 . 1 `uc 1 SCS 1 0 :1:0 
 `uc 1 LTS 1 0 :1:1 
 `uc 1 HTS 1 0 :1:2 
 `uc 1 OSTS 1 0 :1:3 
 `uc 1 IRCF 1 0 :3:4 
 ]
 "1883
-[s S303 . 1 `uc 1 . 1 0 :4:0 
+[s S347 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 IRCF0 1 0 :1:4 
 `uc 1 IRCF1 1 0 :1:5 
 `uc 1 IRCF2 1 0 :1:6 
 ]
-[u S308 . 1 `S297 1 . 1 0 `S303 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES308  1 e 1 @143 ]
+[u S352 . 1 `S341 1 . 1 0 `S347 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES352  1 e 1 @143 ]
 "1980
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S356 . 1 `uc 1 SEN 1 0 :1:0 
+[s S400 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -141,8 +152,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1997
-[u S365 . 1 `S356 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES365  1 e 1 @145 ]
+[u S409 . 1 `S400 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES409  1 e 1 @145 ]
 "2049
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2178

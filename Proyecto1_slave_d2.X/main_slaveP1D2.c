@@ -40,4 +40,9 @@ void setup(void){
     TXSTAbits.TX9 = 0;          // Utilizamos solo 8 bits
     TXSTAbits.TXEN = 1;         // Habilitamos transmisor
     RCSTAbits.CREN = 1;         // Habilitamos receptor
+    
+    // Configuraciones de interrupciones
+    INTCONbits.GIE = 1;         // Habilitamos interrupciones globales
+    INTCONbits.PEIE = 1;        // Habilitamos interrupciones de perifericos
+    PIE1bits.RCIE = 1;          // Habilitamos Interrupciones de recepci n
 }

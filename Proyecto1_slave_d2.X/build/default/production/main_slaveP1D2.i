@@ -2709,4 +2709,9 @@ void setup(void){
     TXSTAbits.TX9 = 0;
     TXSTAbits.TXEN = 1;
     RCSTAbits.CREN = 1;
+
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.RCIE = 1;
 }

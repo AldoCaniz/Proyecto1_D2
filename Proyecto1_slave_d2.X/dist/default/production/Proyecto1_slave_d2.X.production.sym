@@ -29,6 +29,7 @@ _TRISC3 43B 0 ABS 0
 _TRISC4 43C 0 ABS 0
 __Hcommon 0 0 ABS 0
 __Lcommon 0 0 ABS 0
+_PIE1bits 8C 0 ABS 0
 __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 _PIR1bits C 0 ABS 0
@@ -131,15 +132,15 @@ intentry 8 63 CODE 8 0
 bssCOMMON 70 75 COMMON 70 1
 %locals
 dist/default/production\Proyecto1_slave_d2.X.production.o
-C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-934 F 0 CODE 0
-937 F 0 CODE 0
-954 F 0 CODE 0
-955 10 0 CODE 0
-956 11 0 CODE 0
-962 12 0 CODE 0
+C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+936 F 0 CODE 0
+939 F 0 CODE 0
+956 F 0 CODE 0
+957 10 0 CODE 0
+958 11 0 CODE 0
 964 12 0 CODE 0
-965 13 0 CODE 0
+966 12 0 CODE 0
+967 13 0 CODE 0
 main_slaveP1D2.c
 24 27 0 CODE 0
 25 27 0 CODE 0

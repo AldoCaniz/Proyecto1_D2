@@ -20,7 +20,7 @@ cstackCOMMON COMMON 1 73 73 3 1 1
 intentry CODE 0 4 4 8 2 1
 bssCOMMON COMMON 1 70 70 3 1 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+$C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 idloc IDLOC 5 2000 2000 4 2 1
 reset_vec CODE 0 0 0 3 2 1
 end_init CODE 0 C C 3 2 1
@@ -69,14 +69,14 @@ STRING 32-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Proyecto1_slave_d2.X.production.o
-F cinit CODE >934:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-F cinit CODE >937:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-F cinit CODE >954:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-10 cinit CODE >955:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-11 cinit CODE >956:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-12 cinit CODE >962:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-12 cinit CODE >964:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
-13 cinit CODE >965:C:\Users\MX050\AppData\Local\Temp\xcAsd4c.s
+F cinit CODE >936:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+F cinit CODE >939:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+F cinit CODE >956:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+10 cinit CODE >957:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+11 cinit CODE >958:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+12 cinit CODE >964:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+12 cinit CODE >966:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
+13 cinit CODE >967:C:\Users\MX050\AppData\Local\Temp\xcAsd5c.s
 4 intentry CODE >18:C:\Users\MX050\OneDrive\Documentos\GitHub\Proyecto1_D2\Proyecto1_slave_d2.X\main_slaveP1D2.c
 16 text1 CODE >18:C:\Users\MX050\OneDrive\Documentos\GitHub\Proyecto1_D2\Proyecto1_slave_d2.X\main_slaveP1D2.c
 16 text1 CODE >19:C:\Users\MX050\OneDrive\Documentos\GitHub\Proyecto1_D2\Proyecto1_slave_d2.X\main_slaveP1D2.c
@@ -109,27 +109,27 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+___sp 0 0 STACK 2 stack C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 _main 4E 0 CODE 0 maintext dist/default/production\Proyecto1_slave_d2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
-start 18 0 CODE 0 init C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+start 18 0 CODE 0 init C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
-___stacklo 0 0 ABS 0 - C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+___stackhi 0 0 ABS 0 - C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
+___stacklo 0 0 ABS 0 - C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Proyecto1_slave_d2.X.production.o
 _TRISCbits 87 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
@@ -139,7 +139,7 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+___int_sp 0 0 STACK 2 stack C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -184,8 +184,9 @@ _isr 2C 0 CODE 0 text1 dist/default/production\Proyecto1_slave_d2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 __end_of_isr 4E 0 CODE 0 text1 dist/default/production\Proyecto1_slave_d2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\MX050\AppData\Local\Temp\xcAsd4c.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\MX050\AppData\Local\Temp\xcAsd5c.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
+_PIE1bits 8C 0 ABS 0 - dist/default/production\Proyecto1_slave_d2.X.production.o
 __pmaintext 4E 0 CODE 0 maintext dist/default/production\Proyecto1_slave_d2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -

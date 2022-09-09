@@ -2680,7 +2680,7 @@ void tmr0_reload(void);
 # 12 "main_slaveP1D2.c" 2
 
 
-uint8_t mensaje = 1;
+uint8_t mensaje;
 
 void setup(void);
 
@@ -2691,6 +2691,9 @@ void __attribute__((picinterrupt(("")))) isr(void){
 }
 
 void main(void) {
+    while (1){
+        PORTBbits.RB7 = mensaje;
+    }
     return;
 }
 

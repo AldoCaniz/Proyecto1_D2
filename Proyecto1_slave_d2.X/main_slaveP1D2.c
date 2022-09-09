@@ -11,7 +11,7 @@
 #include "oscilador.h"
 #include "tmr0.h"
 
-uint8_t mensaje = 1;
+uint8_t mensaje;
 
 void setup(void);
 
@@ -22,6 +22,9 @@ void __interrupt() isr(void){
 }
 
 void main(void) {
+    while (1){
+        PORTBbits.RB7 = mensaje;   
+    }
     return;
 }
 

@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>tmr0.h</itemPath>
       <itemPath>oscilador.h</itemPath>
+      <itemPath>I2C.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -24,7 +25,6 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>I2C.h</itemPath>
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>

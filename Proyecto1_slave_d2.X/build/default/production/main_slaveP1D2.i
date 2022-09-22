@@ -2681,34 +2681,43 @@ void tmr0_reload(void);
 
 
 uint8_t mensaje;
+uint8_t segundos = 0;
 
 void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
-    if (PIR1bits.RCIF){
-        mensaje = RCREG;
-    }
+
+
+
 }
 
 void main(void) {
     while (1){
-        PORTBbits.RB7 = mensaje;
+
+
+
+        I2C_Master_Start();
+        I2C_Master_Write(0b11010000);
+        I2C_Master_Write(0x00);
+        I2C_Master_RepeatedStart();
+        I2C_Master_Write(0b11010001);
+        segundos = I2C_Master_Read(0);
+        I2C_Master_Stop();
+        _delay((unsigned long)((200)*(8000000/4000.0)));
+        PORTD = segundos;
+
     }
     return;
 }
 
 void setup(void){
-    TXSTAbits.SYNC = 0;
-    TXSTAbits.BRGH = 1;
-    BAUDCTLbits.BRG16 = 1;
+# 59 "main_slaveP1D2.c"
+    I2C_Master_Init(100000);
 
-    SPBRG = 25;
-    SPBRGH = 0;
 
-    RCSTAbits.SPEN = 1;
-    TXSTAbits.TX9 = 0;
-    TXSTAbits.TXEN = 1;
-    RCSTAbits.CREN = 1;
+
+    TRISD = 0;
+    PORTD = 0;
 
 
     INTCONbits.GIE = 1;

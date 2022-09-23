@@ -26,10 +26,10 @@ void main(void) {
     while (1){
         PORTBbits.RB7 = mensaje;
         
-        //I2C
+        //I2C_probando ejemplo "single byte read, control register" del datasheet
         I2C_Master_Start();    // Iniciamos la comunicacion
         I2C_Master_Write(0b11010000); //Esta es la direccion del RTC segun el datasheet, con el ultimo bit en 0 por que vamos a escribir
-        I2C_Master_Write(0x00); //Le decimos que este es el registro que queremos leer (00h es el de los segundos) 
+        I2C_Master_Write(0b00001110); //Le decimos que este es el registro que queremos leer (00h es el de los segundos) 
         I2C_Master_RepeatedStart(); // Reiniciamos la comunicacion para poder leer el registro
         I2C_Master_Write(0b11010001); // Mandamos la direccion del RTC pero con un 1 al final para leer
         segundos = I2C_Master_Read(0); // guardamos el valor del registro de segundos en la variable

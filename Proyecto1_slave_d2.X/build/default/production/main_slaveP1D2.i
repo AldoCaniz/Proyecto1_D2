@@ -2686,19 +2686,19 @@ uint8_t segundos = 0;
 void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
-
-
-
+    if (PIR1bits.RCIF){
+        mensaje = RCREG;
+    }
 }
 
 void main(void) {
     while (1){
-
+        PORTBbits.RB7 = mensaje;
 
 
         I2C_Master_Start();
         I2C_Master_Write(0b11010000);
-        I2C_Master_Write(0x00);
+        I2C_Master_Write(0b00001110);
         I2C_Master_RepeatedStart();
         I2C_Master_Write(0b11010001);
         segundos = I2C_Master_Read(0);
@@ -2711,7 +2711,19 @@ void main(void) {
 }
 
 void setup(void){
-# 59 "main_slaveP1D2.c"
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
+    BAUDCTLbits.BRG16 = 1;
+
+    SPBRG = 25;
+    SPBRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.CREN = 1;
+
+
     I2C_Master_Init(100000);
 
 

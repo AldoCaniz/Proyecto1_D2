@@ -1,4 +1,4 @@
-# 1 "main_master.c"
+# 1 "main_masterP1D2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main_master.c" 2
+# 1 "main_masterP1D2.c" 2
 
 
 
@@ -15,6 +15,8 @@
 
 
 
+# 1 "./LCD.h" 1
+# 42 "./LCD.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2632,9 +2634,78 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC16Fxxx_DFP/1.3.42/xc8\\pic\\include\\xc.h" 2 3
-# 9 "main_master.c" 2
+# 42 "./LCD.h" 2
 
+
+
+
+void Lcd_Port(char a);
+
+void Lcd_Cmd(char a);
+
+void Lcd_Clear(void);
+
+void Lcd_Set_Cursor(char a, char b);
+
+void Lcd_Init(void);
+
+void Lcd_Write_Char(char a);
+
+void Lcd_Write_String(char *a);
+
+void Lcd_Shift_Right(void);
+
+void Lcd_Shift_Left(void);
+# 9 "main_masterP1D2.c" 2
+
+# 1 "./Osciladors.h" 1
+# 10 "main_masterP1D2.c" 2
+
+# 1 "./SPI.h" 1
+# 12 "./SPI.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
+# 12 "./SPI.h" 2
+
+
+void init_SPI (void);
+# 11 "main_masterP1D2.c" 2
+
+
+
+uint8_t mensaje = 1;
+
+void setup(void);
+
+void __attribute__((picinterrupt(("")))) isr(void){
+    if (PIR1bits.RCIF){
+        mensaje = RCREG;
+    }
+}
 
 void main(void) {
+    while(1){
+        if (PIR1bits.TXIF){
+            TXREG = mensaje;
+        }
+    }
     return;
+}
+
+void setup(void){
+    TXSTAbits.SYNC = 0;
+    TXSTAbits.BRGH = 1;
+    BAUDCTLbits.BRG16 = 1;
+
+    SPBRG = 25;
+    SPBRGH = 0;
+
+    RCSTAbits.SPEN = 1;
+    TXSTAbits.TX9 = 0;
+    TXSTAbits.TXEN = 1;
+    RCSTAbits.CREN = 1;
+
+
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    PIE1bits.RCIE = 1;
 }

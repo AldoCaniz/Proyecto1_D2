@@ -11,14 +11,20 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\Proyecto1_master_d2.X.production.o
-cinit CODE 0 7FC 7FC 4 2 1
+$C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
 idloc IDLOC 5 2000 2000 4 2 1
-maintext CODE 0 7F9 7F9 3 2 1
+reset_vec CODE 0 0 0 3 2 1
+end_init CODE 0 C C 3 2 1
 config CONFIG 4 2007 2007 2 2 1
-$C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
+$dist/default/production\Proyecto1_master_d2.X.production.o
+cinit CODE 0 F F A 2 1
 idloc IDLOC 5 2000 2000 4 2 1
-end_init CODE 0 0 0 3 2 1
+text1 CODE 0 19 19 11 2 1
+idataCOMMON CODE 0 36 36 1 2 1
+maintext CODE 0 2A 2A C 2 1
+cstackCOMMON COMMON 1 70 70 3 1 1
+intentry CODE 0 4 4 8 2 1
+dataCOMMON COMMON 1 73 73 1 1 1
 config CONFIG 4 2007 2007 2 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -34,22 +40,22 @@ BANK0 20-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-7F8 2
-CONST 800-1FFF 2
-ENTRY 3-7F8 2
-ENTRY 800-1FFF 2
-CODE 3-7F8 2
-CODE 800-1FFF 2
+CONST 3-3 2
+CONST 37-1FFF 2
+ENTRY 3-3 2
+ENTRY 37-1FFF 2
+CODE 3-3 2
+CODE 37-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
 SFR3 180-18F 1
-COMMON 70-7D 1
+COMMON 74-7D 1
 EEDATA 2100-21FF 2
-STRCODE 3-7F8 2
-STRCODE 800-1FFF 2
-STRING 3-7F8 2
-STRING 800-1FFF 2
+STRCODE 3-3 2
+STRCODE 37-1FFF 2
+STRING 3-3 2
+STRING 37-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -64,14 +70,22 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Proyecto1_master_d2.X.production.o
-7FC cinit CODE >908:C:\Users\MX050\AppData\Local\Temp\xcAsd90.s
-7FC cinit CODE >911:C:\Users\MX050\AppData\Local\Temp\xcAsd90.s
-7FC cinit CODE >917:C:\Users\MX050\AppData\Local\Temp\xcAsd90.s
-7FC cinit CODE >919:C:\Users\MX050\AppData\Local\Temp\xcAsd90.s
-7FD cinit CODE >920:C:\Users\MX050\AppData\Local\Temp\xcAsd90.s
-7F9 maintext CODE >11:C:\Users\MX050\OneDrive\Documentos\GitHub\Proyecto1_D2\Proyecto1_master_d2.X\main_master.c
-7F9 maintext CODE >12:C:\Users\MX050\OneDrive\Documentos\GitHub\Proyecto1_D2\Proyecto1_master_d2.X\main_master.c
-7F9 maintext CODE >13:C:\Users\MX050\OneDrive\Documentos\GitHub\Proyecto1_D2\Proyecto1_master_d2.X\main_master.c
+F cinit CODE >934:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+F cinit CODE >937:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+F cinit CODE >951:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+14 cinit CODE >952:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+15 cinit CODE >958:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+15 cinit CODE >960:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+16 cinit CODE >961:C:\Users\Josea\AppData\Local\Temp\xcAs1juc.s
+4 intentry CODE >18:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+19 text1 CODE >18:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+19 text1 CODE >19:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+1F text1 CODE >20:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+23 text1 CODE >22:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+2A maintext CODE >24:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+2A maintext CODE >25:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+2A maintext CODE >26:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
+30 maintext CODE >27:C:\Users\Josea\MPLABXProjects\Proyecto1\Proyecto1_D2\Proyecto1_master_d2.X\main_masterP1D2.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -85,39 +99,45 @@ $dist/default/production\Proyecto1_master_d2.X.production.o
 # is the name of the object file in which the symbol was defined.
 %SYMTAB
 ___latbits 2 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
-__Hspace_0 800 0 ABS 0 - -
-__Hspace_1 0 0 ABS 0 - -
+__Hspace_0 37 0 ABS 0 - -
+__Hspace_1 74 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Hspace_4 4010 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-_main FF2 0 CODE 0 maintext dist/default/production\Proyecto1_master_d2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+_main 54 0 CODE 0 maintext dist/default/production\Proyecto1_master_d2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
-start 0 0 CODE 0 init C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
+start 18 0 CODE 0 init C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+intlevel0 0 0 ENTRY 0 functab C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
+__pidataCOMMON 6C 0 CODE 0 idataCOMMON dist/default/production\Proyecto1_master_d2.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-___stacklo 0 0 ABS 0 - C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
-start_initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
+___stackhi 0 0 ABS 0 - C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+___stacklo 0 0 ABS 0 - C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+_BAUDCTLbits 187 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+start_initialization 1E 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
+_SPBRGH 9A 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+___int_sp 0 0 STACK 2 stack C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
-__Hcinit 1000 0 CODE 0 cinit -
+__Hcinit 32 0 CODE 0 cinit -
 __Hidloc 4008 0 IDLOC 5 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
@@ -127,14 +147,14 @@ __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FF8 0 CODE 0 cinit -
+__Lcinit 1E 0 CODE 0 cinit -
 __Lidloc 0 0 IDLOC 5 idloc -
 __Lstack 0 0 STACK 2 stack -
 _PORTDbits 8 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 _INTCONbits B 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
-__Hinit 0 0 CODE 0 init -
+__Hinit 18 0 CODE 0 init -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -142,7 +162,7 @@ __Hsfr3 0 0 ABS 0 sfr3 -
 __Htext 0 0 ABS 0 text -
 __Labs1 0 0 ABS 0 abs1 -
 __Lcode 0 0 ABS 0 code -
-__Linit 0 0 CODE 0 init -
+__Linit 18 0 CODE 0 init -
 __Lsfr0 0 0 ABS 0 sfr0 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
@@ -154,13 +174,18 @@ _RD4 44 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 _RD5 45 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 _RD6 46 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 _RD7 47 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
-__S0 800 0 ABS 0 - -
-__S1 0 0 ABS 0 - -
+__S0 37 0 ABS 0 - -
+__S1 74 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-__Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\MX050\AppData\Local\Temp\xcAsd90.o
+_isr 32 0 CODE 0 text1 dist/default/production\Proyecto1_master_d2.X.production.o
+saved_w 7E 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+__end_of_isr 54 0 CODE 0 text1 dist/default/production\Proyecto1_master_d2.X.production.o
+__Lintentry 8 0 CODE 0 intentry -
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Josea\AppData\Local\Temp\xcAs1juc.o
+_RCSTAbits 18 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 _PIE1bits 8C 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
-__pmaintext FF2 0 CODE 0 maintext dist/default/production\Proyecto1_master_d2.X.production.o
+__pmaintext 54 0 CODE 0 maintext dist/default/production\Proyecto1_master_d2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 0 0 CONFIG 4 config -
 __Lspace_0 0 0 ABS 0 - -
@@ -169,27 +194,36 @@ __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 _PIR1bits C 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
-__Lend_init 0 0 CODE 0 end_init -
+__Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-end_of_initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
-__Hintentry 0 0 CODE 0 intentry -
+end_of_initialization 2A 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
+__Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
-__Hreset_vec 0 0 CODE 0 reset_vec -
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__ptext1 32 0 CODE 0 text1 dist/default/production\Proyecto1_master_d2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-__end_of__initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
+__end_of__initialization 2A 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
 __Lclrtext 0 0 ABS 0 clrtext -
-__pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1_master_d2.X.production.o
-__Hend_init 6 0 CODE 0 end_init -
-__end_of_main FF8 0 CODE 0 maintext dist/default/production\Proyecto1_master_d2.X.production.o
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\Proyecto1_master_d2.X.production.o
+_mensaje 73 0 COMMON 1 dataCOMMON dist/default/production\Proyecto1_master_d2.X.production.o
+_TXSTAbits 98 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+__Hend_init 1E 0 CODE 0 end_init -
+__end_of_main 6C 0 CODE 0 maintext dist/default/production\Proyecto1_master_d2.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+_RCREG 1A 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+_SPBRG 99 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
+_TXREG 19 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
+interrupt_function 8 0 CODE 0 intentry dist/default/production\Proyecto1_master_d2.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\Proyecto1_master_d2.X.production.o
-__initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
+__pintentry 8 0 CODE 0 intentry dist/default/production\Proyecto1_master_d2.X.production.o
+__initialization 1E 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.X.production.o
+__pdataCOMMON 73 0 COMMON 1 dataCOMMON dist/default/production\Proyecto1_master_d2.X.production.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -215,8 +249,8 @@ __initialization FF8 0 CODE 0 cinit dist/default/production\Proyecto1_master_d2.
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7FC FF8 4 2
-maintext 0 7F9 FF2 3 2
+cstackCOMMON 1 70 70 4 1
+intentry 0 4 8 33 2
 reset_vec 0 0 0 3 2
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section

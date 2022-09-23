@@ -26,6 +26,9 @@ void main(void) {
         if (PIR1bits.TXIF){             // Esperamos a que este libre el ?
             TXREG = mensaje;    // Cargamos caracter a enviar
         }
+        //Prueba SPI
+        spiWrite(mensaje);
+        __delay_ms(100);
     }
     return;
 }
@@ -43,6 +46,9 @@ void setup(void){
     TXSTAbits.TXEN = 1;         // Habilitamos transmisor
     RCSTAbits.CREN = 1;         // Habilitamos receptor
     
+    
+    //SPI
+    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
     // Configuraciones de interrupciones
     INTCONbits.GIE = 1;         // Habilitamos interrupciones globales
     INTCONbits.PEIE = 1;        // Habilitamos interrupciones de perifericos

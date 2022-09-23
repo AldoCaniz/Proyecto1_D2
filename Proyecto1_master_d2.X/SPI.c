@@ -1,26 +1,52 @@
-#include <xc.h>
+ /*
+ * File            : spi.c
+ * Author          : Ligo George
+ * Company         : electroSome
+ * Project         : SPI Library for MPLAB XC8
+ * Microcontroller : PIC 16F877A
+ * Created on April 15, 2017, 5:59 PM
+ */
+
 #include "SPI.h"
 
-/*------------------------------------------------------------------------------
- * Funciones
-------------------------------------------------------------------------------*/
-
-void init_SPI (void){   
-    TRISC = 0b00011000; // -> SDI y SCK entradas, SD0 como salida
-    PORTC = 0;
-    // SSPCON <5:0>
-    SSPCONbits.SSPM = 0b0100;   // -> SPI Esclavo, SS entrada o salida
-    SSPCONbits.CKP = 0;         // -> Reloj inactivo en 0
-    SSPCONbits.SSPEN = 1;       // -> Habilitamos pines de SPI
-    // SSPSTAT<7:6>
-    SSPSTATbits.CKE = 1;        // -> Dato enviado cada flanco de subida
-    SSPSTATbits.SMP = 0;        // -> Dato al final del pulso de reloj
-
-    PIR1bits.SSPIF = 0;         // Limpiamos bandera de SPI
-    PIE1bits.SSPIE = 1;         // Habilitamos int. de SPI
-    INTCONbits.PEIE = 1;
-    INTCONbits.GIE = 1;
-  
+void spiInit(Spi_Type sType, Spi_Data_Sample sDataSample, Spi_Clock_Idle sClockIdle, Spi_Transmit_Edge sTransmitEdge)
+{
+    TRISC5 = 0;
+    if(sType & 0b00000100)
+    {
+        SSPSTAT = sTransmitEdge;
+        TRISC3 = 1;
+    }
+    else
+    {
+        SSPSTAT = sDataSample | sTransmitEdge;
+        TRISC3 = 0;
+    }
     
-    return;
+    SSPCON = sType | sClockIdle;
 }
+
+static void spiReceiveWait()
+{
+    while ( !SSPSTATbits.BF );
+}
+
+void spiWrite(char dat)
+{
+    SSPBUF = dat;
+}
+
+unsigned spiDataReady()
+{
+    if(SSPSTATbits.BF)
+        return 1;
+    else
+        return 0;
+}
+
+char spiRead()
+{
+    spiReceiveWait(); 
+    return(SSPBUF);
+}
+

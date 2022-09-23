@@ -2662,12 +2662,40 @@ void Lcd_Shift_Left(void);
 # 10 "main_masterP1D2.c" 2
 
 # 1 "./SPI.h" 1
-# 12 "./SPI.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.35\\pic\\include\\c90\\stdint.h" 1 3
-# 12 "./SPI.h" 2
+# 17 "./SPI.h"
+typedef enum
+{
+    SPI_MASTER_OSC_DIV4 = 0b00100000,
+    SPI_MASTER_OSC_DIV16 = 0b00100001,
+    SPI_MASTER_OSC_DIV64 = 0b00100010,
+    SPI_MASTER_TMR2 = 0b00100011,
+    SPI_SLAVE_SS_EN = 0b00100100,
+    SPI_SLAVE_SS_DIS = 0b00100101
+}Spi_Type;
+
+typedef enum
+{
+    SPI_DATA_SAMPLE_MIDDLE = 0b00000000,
+    SPI_DATA_SAMPLE_END = 0b10000000
+}Spi_Data_Sample;
+
+typedef enum
+{
+    SPI_CLOCK_IDLE_HIGH = 0b00010000,
+    SPI_CLOCK_IDLE_LOW = 0b00000000
+}Spi_Clock_Idle;
+
+typedef enum
+{
+    SPI_IDLE_2_ACTIVE = 0b00000000,
+    SPI_ACTIVE_2_IDLE = 0b01000000
+}Spi_Transmit_Edge;
 
 
-void init_SPI (void);
+void spiInit(Spi_Type, Spi_Data_Sample, Spi_Clock_Idle, Spi_Transmit_Edge);
+void spiWrite(char);
+unsigned spiDataReady();
+char spiRead();
 # 11 "main_masterP1D2.c" 2
 
 
@@ -2687,6 +2715,9 @@ void main(void) {
         if (PIR1bits.TXIF){
             TXREG = mensaje;
         }
+
+        spiWrite(mensaje);
+        _delay((unsigned long)((100)*(8000000/4000.0)));
     }
     return;
 }
@@ -2704,6 +2735,9 @@ void setup(void){
     TXSTAbits.TXEN = 1;
     RCSTAbits.CREN = 1;
 
+
+
+    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;

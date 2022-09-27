@@ -33,7 +33,7 @@ void main(void) {
     return;
 }
 
-void setup(void){
+void setup(void){  
     TXSTAbits.SYNC = 0;         // Comunicaci n ascincrona (full-duplex)
     TXSTAbits.BRGH = 1;         // Baud rate de alta velocidad 
     BAUDCTLbits.BRG16 = 1;      // 16-bits para generar el baud rate

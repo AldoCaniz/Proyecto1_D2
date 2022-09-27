@@ -6,7 +6,11 @@
                    projectFiles="true">
       <itemPath>Osciladors.h</itemPath>
       <itemPath>LCD.h</itemPath>
+<<<<<<< Updated upstream
       <itemPath>SPI.h</itemPath>
+=======
+      <itemPath>I2C.h</itemPath>
+>>>>>>> Stashed changes
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,7 +22,11 @@
       <itemPath>oscilador.c</itemPath>
       <itemPath>LCD.c</itemPath>
       <itemPath>main_masterP1D2.c</itemPath>
+<<<<<<< Updated upstream
       <itemPath>SPI.c</itemPath>
+=======
+      <itemPath>I2C.c</itemPath>
+>>>>>>> Stashed changes
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

@@ -57,6 +57,7 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
+<<<<<<< Updated upstream
 SOURCEFILES_QUOTED_IF_SPACED=oscilador.c LCD.c main_masterP1D2.c SPI.c
 
 # Object Files Quoted if spaced
@@ -68,6 +69,19 @@ OBJECTFILES=${OBJECTDIR}/oscilador.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/main_mast
 
 # Source Files
 SOURCEFILES=oscilador.c LCD.c main_masterP1D2.c SPI.c
+=======
+SOURCEFILES_QUOTED_IF_SPACED=oscilador.c SPI.c LCD.c main_masterP1D2.c I2C.c
+
+# Object Files Quoted if spaced
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/oscilador.p1 ${OBJECTDIR}/SPI.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/main_masterP1D2.p1 ${OBJECTDIR}/I2C.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/oscilador.p1.d ${OBJECTDIR}/SPI.p1.d ${OBJECTDIR}/LCD.p1.d ${OBJECTDIR}/main_masterP1D2.p1.d ${OBJECTDIR}/I2C.p1.d
+
+# Object Files
+OBJECTFILES=${OBJECTDIR}/oscilador.p1 ${OBJECTDIR}/SPI.p1 ${OBJECTDIR}/LCD.p1 ${OBJECTDIR}/main_masterP1D2.p1 ${OBJECTDIR}/I2C.p1
+
+# Source Files
+SOURCEFILES=oscilador.c SPI.c LCD.c main_masterP1D2.c I2C.c
+>>>>>>> Stashed changes
 
 
 
@@ -118,6 +132,7 @@ ${OBJECTDIR}/main_masterP1D2.p1: main_masterP1D2.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/main_masterP1D2.d ${OBJECTDIR}/main_masterP1D2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main_masterP1D2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+<<<<<<< Updated upstream
 ${OBJECTDIR}/SPI.p1: SPI.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/SPI.p1.d 
@@ -125,6 +140,15 @@ ${OBJECTDIR}/SPI.p1: SPI.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/SPI.p1 SPI.c 
 	@-${MV} ${OBJECTDIR}/SPI.d ${OBJECTDIR}/SPI.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/SPI.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+=======
+${OBJECTDIR}/I2C.p1: I2C.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/I2C.p1.d 
+	@${RM} ${OBJECTDIR}/I2C.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/I2C.p1 I2C.c 
+	@-${MV} ${OBJECTDIR}/I2C.d ${OBJECTDIR}/I2C.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+>>>>>>> Stashed changes
 	
 else
 ${OBJECTDIR}/oscilador.p1: oscilador.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -151,6 +175,7 @@ ${OBJECTDIR}/main_masterP1D2.p1: main_masterP1D2.c  nbproject/Makefile-${CND_CON
 	@-${MV} ${OBJECTDIR}/main_masterP1D2.d ${OBJECTDIR}/main_masterP1D2.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/main_masterP1D2.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+<<<<<<< Updated upstream
 ${OBJECTDIR}/SPI.p1: SPI.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/SPI.p1.d 
@@ -158,6 +183,15 @@ ${OBJECTDIR}/SPI.p1: SPI.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/SPI.p1 SPI.c 
 	@-${MV} ${OBJECTDIR}/SPI.d ${OBJECTDIR}/SPI.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/SPI.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+=======
+${OBJECTDIR}/I2C.p1: I2C.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/I2C.p1.d 
+	@${RM} ${OBJECTDIR}/I2C.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mdefault-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/I2C.p1 I2C.c 
+	@-${MV} ${OBJECTDIR}/I2C.d ${OBJECTDIR}/I2C.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/I2C.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+>>>>>>> Stashed changes
 	
 endif
 

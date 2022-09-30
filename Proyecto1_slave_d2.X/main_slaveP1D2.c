@@ -12,9 +12,10 @@
 #include "tmr0.h"
 
 uint8_t mensaje;
-uint8_t segundos = 0;
+uint8_t minutos = 0;
 
 void setup(void);
+void motorDC(void);
 
 void __interrupt() isr(void){
     if (PIR1bits.RCIF){
@@ -29,13 +30,12 @@ void main(void) {
         //I2C_probando ejemplo "single byte read, control register" del datasheet
         I2C_Master_Start();    // Iniciamos la comunicacion
         I2C_Master_Write(0b11010000); //Esta es la direccion del RTC segun el datasheet, con el ultimo bit en 0 por que vamos a escribir
-        I2C_Master_Write(0b00001110); //Le decimos que este es el registro que queremos leer (00h es el de los segundos) 
+        I2C_Master_Write(0x01); //Le decimos que este es el registro que queremos leer (01h es el de los minutos) 
         I2C_Master_RepeatedStart(); // Reiniciamos la comunicacion para poder leer el registro
         I2C_Master_Write(0b11010001); // Mandamos la direccion del RTC pero con un 1 al final para leer
-        segundos = I2C_Master_Read(0); // guardamos el valor del registro de segundos en la variable
+        minutos = I2C_Master_Read(0); // guardamos el valor del registro de segundos en la variable
         I2C_Master_Stop(); // Terminamos la comunicacion I2C
         __delay_ms(200);    //Damos un delay por que estamos en el loop
-        PORTD = segundos;
         
     }
     return;
@@ -67,3 +67,12 @@ void setup(void){
     INTCONbits.PEIE = 1;        // Habilitamos interrupciones de perifericos
     PIE1bits.RCIE = 1;          // Habilitamos Interrupciones de recepcion
 }
+
+void motorDC(void){
+    if (minutos == 30){
+        PORTDbits.RD1 = 1;  //Cada 30 minutos hacemos que suba el asta de la estación
+    }
+    if (minutos == 31){
+        PORTDbits.RD1 = 0;
+    }
+};

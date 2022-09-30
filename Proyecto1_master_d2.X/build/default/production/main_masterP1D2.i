@@ -2697,18 +2697,46 @@ void spiWrite(char);
 unsigned spiDataReady();
 char spiRead();
 # 11 "main_masterP1D2.c" 2
-
-
-
+# 20 "main_masterP1D2.c"
 uint8_t mensaje = 1;
+uint8_t ENVIO, reloj, presion, pot, boton = 0;
+unsigned short CCPR = 0;
 
 void setup(void);
+unsigned short map(uint8_t val, uint8_t in_min, uint8_t in_max,
+            unsigned short out_min, unsigned short out_max);
+
+
 
 void __attribute__((picinterrupt(("")))) isr(void){
     if (PIR1bits.RCIF){
         mensaje = RCREG;
     }
+
+    if (PIR1bits.SSPIF){
+        ENVIO = spiRead();
+        if (ENVIO == 1){
+            spiWrite(reloj);
+        } else if (ENVIO == 2) {
+            spiWrite(presion);
+        } else if (ENVIO == 3){
+            spiWrite(pot);
+        } else if (ENVIO == 4){
+            spiWrite(boton);
+        }
+        PIR1bits.SSPIF = 0;
+    }
+    if(PIR1bits.ADIF){
+        if(ADCON0bits.CHS == 0){
+            CCPR = map(ADRESH, 0, 255, 0, 500);
+            CCPR1L = (uint8_t)(CCPR>>2);
+            CCP1CONbits.DC1B = CCPR & 0b11;
+            PIR1bits.ADIF = 0;
+    }
+
 }
+    }
+
 
 void main(void) {
     while(1){
@@ -2716,8 +2744,15 @@ void main(void) {
             TXREG = mensaje;
         }
 
-        spiWrite(mensaje);
-        _delay((unsigned long)((100)*(8000000/4000.0)));
+
+        if(ADCON0bits.GO == 0){
+            if(ADCON0bits.CHS == 0b0000)
+                ADCON0bits.CHS = 0b0001;
+            else if(ADCON0bits.CHS == 0b0001)
+                ADCON0bits.CHS = 0b0000;
+            _delay((unsigned long)((40)*(4000000/4000000.0)));
+            ADCON0bits.GO = 1;
+        }
     }
     return;
 }
@@ -2737,9 +2772,47 @@ void setup(void){
 
 
 
-    spiInit(SPI_SLAVE_SS_DIS, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
+    spiInit(SPI_SLAVE_SS_EN, SPI_DATA_SAMPLE_MIDDLE, SPI_CLOCK_IDLE_LOW, SPI_IDLE_2_ACTIVE);
 
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+
     PIE1bits.RCIE = 1;
+    PIR1bits.ADIF = 0;
+    PIE1bits.ADIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.GIE = 1;
+
+
+
+
+    ADCON0bits.ADCS = 0b01;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG1 = 0;
+    ADCON0bits.CHS = 0b0000;
+    ADCON1bits.ADFM = 0;
+    ADCON0bits.ADON = 1;
+    _delay((unsigned long)((40)*(4000000/4000000.0)));
+
+
+    TRISCbits.TRISC2 = 1;
+    TRISCbits.TRISC3 = 1;
+    PR2 = 124;
+
+
+    CCP1CON = 0;
+    CCP1CONbits.P1M = 0;
+    CCP1CONbits.CCP1M = 0b1100;
+
+    CCPR1L = 125>>2;
+    CCP1CONbits.DC1B = 125 & 0b11;
+
+    TRISCbits.TRISC2 = 0;
+    TRISCbits.TRISC3 = 0;
+
+
+
+}
+
+unsigned short map(uint8_t x, uint8_t x0, uint8_t x1,
+            unsigned short y0, unsigned short y1){
+    return (unsigned short)(y0+((float)(y1-y0)/(x1-x0))*(x-x0));
 }

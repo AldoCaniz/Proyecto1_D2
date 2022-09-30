@@ -28,6 +28,7 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>../../../../Desktop</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
